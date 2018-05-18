@@ -1,0 +1,621 @@
+Generación Automática de Tests 
+Año 2018 
+Trabajo Práctico 1
+Testing Unitario Basado en Modelos 
+Generación Aleatoria de Entradas
+Alumno: Leandro Buttignol.
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+Ejercicio 1. Para la implementación de listas simplemente encadenadas 
+del ejercicio 11 del práctico 1:
+a) Usando teorías Junit escriba propiedades, y un generador aleatorio 
+de listas de enteros que permita especificar el rango de enteros que 
+contienen las listas y las longitudes mínimas y máximas de las mismas.
+
+- Respuesta: Ésta respuesta se encuentra plazmada en las siguientes clses
+	- SinglyLinkedListTheories
+	- SinglyLinkedListGenerator
+	- RandomSinglyLinjedList
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+	
+b) Cómo se deben instanciar los generadores para lograr tests eficientes
+y con un alto puntaje de cobertura de ramas y mutación (>80%)?
+
+Cobertura de ramas: 100%
+	
+Cobertura de mutación: 
+
+Resultado Obtenido Ejecutando Pitest por defecto:
+Mutation Score = 75%
+		================================================================================
+		- Statistics
+		================================================================================
+		>> Generated 61 mutations Killed 46 (75%)
+		>> Ran 104 tests (1.7 tests per mutation)
+		================================================================================
+		- Mutators
+		================================================================================
+		> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+		>> Generated 9 Killed 2 (22%)
+		> KILLED 2 SURVIVED 7 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+		>> Generated 4 Killed 4 (100%)
+		> KILLED 3 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+		>> Generated 14 Killed 11 (79%)
+		> KILLED 11 SURVIVED 3 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator
+		>> Generated 12 Killed 11 (92%)
+		> KILLED 11 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+		>> Generated 6 Killed 5 (83%)
+		> KILLED 5 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+		>> Generated 16 Killed 13 (81%)
+		> KILLED 8 SURVIVED 3 TIMED_OUT 5 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		Sending results: PitResults [htmlResultFile=/Users/lbuttignol/eclipse-workspace/
+		.metadata/.plugins/org.pitest.pitclipse.core/html_results/201805082132/index.html
+		, projects=[Tp1]]
+		Closing server
+		Closed
+
+Resultado obtenido excluyendo la clase Ejercicio1.RandomSinglyLinkedList:
+Mutation Score = 79%
+		================================================================================
+		- Statistics
+		================================================================================
+		>> Generated 38 mutations Killed 30 (79%)
+		>> Ran 56 tests (1.47 tests per mutation)
+		================================================================================
+		- Mutators
+		================================================================================
+		> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+		>> Generated 3 Killed 2 (67%)
+		> KILLED 2 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+		>> Generated 2 Killed 2 (100%)
+		> KILLED 2 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+		>> Generated 12 Killed 9 (75%)
+		> KILLED 9 SURVIVED 3 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator
+		>> Generated 9 Killed 9 (100%)
+		> KILLED 9 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+		>> Generated 3 Killed 2 (67%)
+		> KILLED 2 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+		>> Generated 9 Killed 6 (67%)
+		> KILLED 6 SURVIVED 3 TIMED_OUT 0 NON_VIABLE 0 
+		> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+		> NO_COVERAGE 0 
+		--------------------------------------------------------------------------------
+		Sending results: PitResults [htmlResultFile=/Users/lbuttignol/eclipse-workspace/
+		.metadata/.plugins/org.pitest.pitclipse.core/html_results/201805082138/index.html
+		, projects=[Tp1]]
+		Closing server
+		Closed
+	
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+c) Bajo que asunciones el generador dado es correcto?
+
+- Respuesta: El generador contiene los siguientes parámetros: 
+	- minVal: Valor mínimo a insertar en la SinglyLinkedList 
+	- maxVal: Valor máximo a insertar en la SinglyLinkedList
+	- minLength: Longitud mínima posible de las SinglyLinkedList a generar
+	- maxLength: Longitud máxima posible de las SinglyLinkedList a generar
+	- cant: Cantidad de SinglyLinkedList a generar
+	
+Para invocar al generador correctamente, se deben cumplir los siguientes
+requisitos:
+	- minVal <= maxVal
+	- minLength >= 0 && maxLength >= 0
+	- minLength <= maxLength
+	- cant >= 0
+	
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+Ejercicio 2. Para el método printPrimes del ejercicio 6 de la práctica 4:
+
+a) Grafique el grafo de flujo de control.
+
+- Respuesta: Ver imágen CFG.jpeg
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+b) Considere los casos de test t1: (n = 3) y t2: (n = 5). Aunque estos
+recorren los mismos caminos primos del grafo de flujo de control de 
+printPrimes, no encuentran necesariamente los mismos defectos. Diseñe
+un defecto simple que sería más probable que descubra t2 que t1.
+
+path test t1) [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,7,8,9,1,10,11,
+			   12,11,12,11,12,11,13]
+
+path test t2) [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,7,8,9,1,2,3,4,
+			   6,7,9,1,2,3,4,5,3,4,5,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,6,
+			   7,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,7,8,9,1,10,11,12,11,
+			   12,11,12,11,12,11,12,11,13]
+
+- Respuesta: 
+	si a la línea : while (numPrimes < n)
+la reemplazo por  : while (numPrimes < 3)
+
+es más probable que sea descubierto por t2, que por t1.
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+c) Provea un caso de test tal que el camino de test correspondiente 
+visite el arco que conecta el comienzo de la sentencia while a la 
+sentencia for sin pasar por el cuerpo del while.
+
+- Respuesta: invocando a printPrimes(x) con x=1 ocurre lo descripto 
+en el enunciado de la pregunta.
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+d) Enumere los requerimientos de test para lograr cobertura de nodos, 
+cobertura de arcos, y cobertura de caminos primos para el grafo 
+construido en el inciso a). (Documente el procedimiento utilizado para 
+obtener los caminos primos.)
+
+- Respuesta:
+
+ - Cobertura de Nodos: éste criterio lo cubro con el siguiente test.
+
+printPrimes(3); que ejecuta el siguiente camino, el cual tiene todos 
+los nodos del grafo.
+
+[0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,7,8,9,1,10,11,
+12,11,12,11,12,11,13]
+
+
+ - Cobertura de Arcos: el test anterior también realiza cobertura de arcos.
+
+
+ - Cobertura de Caminos Primos: éste criterio lo cubro con los siguientes test:
+
+-
+printPrimes(-1)
+T1 path [0,1,10,11,12,11,13]
+
+-
+printPrimes(2)
+T2 path [0,1,2,3,4,5,3,7,8,9,1,10,11,12,11,12,11,13]
+
+-
+printPrimes(3)
+T3 path [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,7,8
+		,9,1,10,11,12,11,12,11,12,11,13]
+
+-
+printPrimes(5)
+T4 path [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,7,8
+		,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,4,5,3,7,8,9,1,2,3,4,6
+		,7,9,1,2,3,4,5,3,4,6,7,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3
+		,4,5,3,4,5,3,7,8,9,1,10,11,12,11,12,11,12,11,12,11,12,11,13]
+            
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+e) Liste caminos de test que consiguen cobertura de nodos pero no 
+cobertura de arcos.
+
+- Respuesta: Los siguientes caminos consiguen cobertura de nodos, 
+pero no de aristas.
+
+En el siguiente camino no se encuentran las aristas (3,7) ni (7,9)
+
+	[0,1,2,3,4,5,3,4,6,7,8,9,1,10,11,12,11,13] 
+
+En el siguiente camino no se encientran la arista (7,9)
+
+	[0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,8,9,1,10,11,12,11,13]
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+f) Liste los caminos de test que consiguen cobertura de arcos pero 
+no cobertura de caminos primos
+
+- Respuesta: Los siguientes caminos consiguen cobertura de aristas,
+pero no de Caminos Primos.
+
+El siguiente test no recorre el camino primo [0,1,10,11,12]
+
+printPrimes(3) path [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,
+					 4,5,3,7,8,9,1,10,11,12,11,12,11,12,11,13]
+
+El siguiente camino tampoco cubre el camino primo [0,1,10,11,12]
+
+printPrimes(5) path [0,1,2,3,4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,
+					 4,5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,4,
+					 5,3,7,8,9,1,2,3,4,6,7,9,1,2,3,4,5,3,4,6,7,9,1,
+					 2,3,4,6,7,9,1,2,3,4,5,3,4,5,3,4,5,3,4,5,3,7,8,
+					 9,1,10,11,12,11,12,11,12,11,12,11,12,11,13]
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+Ejercicio 3. Para el programa cal del ejercicio 5 de la práctica 6 provea:
+
+a) Un modelo del espacio de entradas para cal y tests para lograr 
+cobertura de bloque base (Base Choice Coverage).
+
+- Respuesta
+Para cubrir Base Choise Coverage se deben escribir características que definen
+las entradas:
+
+Característica 1) Tipo de año: 
+
+	- Bloque 1) Año Bisiesto : 	2020 
+	- Bloque 2) Año común :		2018
+
+Característica 2) Relación entre mes1 y mes2: 
+
+	- Bloque 1) month1 < month2: 1,5 	 
+	- Bloque 2) month1 = month2: 2,2
+	- Bloque 3) month1 > month2: 5,1
+
+Característica 3) Tipo de día:
+	- Bloque 1) Pertenece a cualquier mes  : 	1,3	[1,28]
+	- Bloque 2) Día especial de febrero : 		29 
+	- Bloque 3) Valor final en algunos meses:	30 
+	- Bloque 4) Valor final en otros meses:		31
+	- Bloque 5) No pertenece a un ningún mes :	32	(-inf..0]u[32..inf)
+
+Elegir bloque base de cada característica, Para cada característica me parece
+apropiado escoger el primer bloque como base porque son las opciones que van 
+a ejercitar mejor el código.
+
+Aclaración, cada test contendrá los siguientes valores en el siguiente orden:
+
+	Tn (month1, day1, month2, day2, year)
+
+Bloque base:
+	T1 (1,3,5,3,2020) 	expected 121
+	T2 (1,3,5,3,2019)	expected 120
+	T3 (2,3,2,3,2020)	expected 0
+	T4 (5,3,1,3,2020)	expected fail
+				solo cambio uno de los días
+	T5 (1,3,5,29,2020)	expected 147
+	T6 (1,3,5,30,2020)	expected 148
+	T7 (1,3,5,31,2020)	expected 149
+	T8 (1,3,5,32,2020)	expected fail
+
+Con estos test obtenemos un Branch Coverage = 70%.
+y un Mutation Score = 25%. 
+
+Mutation Result:
+================================================================================
+- Statistics
+================================================================================
+>> Generated 56 mutations Killed 14 (25%)
+>> Ran 31 tests (0.55 tests per mutation)
+================================================================================
+
+
+(Necesita un refinamiento en las características, analizar el año.)!!!!!!!!!!!!!!!!!!!!!!
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+b) Tests para lograr cobertura de cláusulas de la especificación de cal.
+
+Para realizar cobertura de cláusulas en la especificación de cal debemos
+analizar la especificación comentada en el código.
+		
+		//***********************************************************
+		// Calculate the number of Days between the two given days in
+		// the same year.
+		// preconditions : day1 and day2 must be in same year
+		//               1 <= month1, month2 <= 12
+		//               1 <= day1, day2 <= 31
+		//               month1 <= month2
+		//               The range for year: 1 ... 10000
+		//***********************************************************
+
+Ésto resulta en un predicado como el siguiente con 7 cláusulas: 
+
+(1<=month1)∧(month2<=12)∧(month1<=month2)∧(1<=day1)∧(1<=day2)∧(1<=year)∧(year<=10000)
+ |_______|   |________|   |____________|   |_____|   |_____|   |_____|   |_________|
+ 	C1			C2				C3			  C4		C5		  C6		  C7
+
+Analicemos cómo hacer verdadera y falsa cada cláusula:
+
+C1)
+False = month1 = 0
+True = 	month1 = 3
+
+C2)
+False = month2 = 13
+True = 	month2 = 9
+
+C3)
+False = month1 = 9 ^ month2 = 3
+True = 	month1 = 3 ^ month2 = 9
+
+C4)
+False = day1 = 0
+True = 	day1 = 2  (Podría darle el valor 40)
+
+C5)
+False = day2 = 35
+True = 	day2 = 15
+
+C6)
+False = year = 0
+True = 	year = 2020
+
+C7)
+False = year = 10001
+True = 	year = 2020
+
+Para realizar cobertura de cláusulas utilizo los siguientes test:
+	
+	Tn (month1, day1, month2, day2, year)
+
+T1 (3,2,9,15,2020)		Cubre las cláusulas: C1,C2,C3,C4,C5,C6,C7
+T2 (0,0,13,35,10001)	Cubre las cláusulas: ¬C1,¬C2,C3,¬C4,¬C5,C6,¬C7
+T3 (9,2,3,15,0)			Cubre las cláusulas: C1,C2,¬C3,C4,C5,¬C6,C7
+
+(No le tengo mucha fé a ésta suite de test)
+(Yo agregaría algunas condiciones más, day1<=31, 1<=day2, month1<=12, 1<=month2)
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+c) Tests para obtener cobertura correlacionada de cláusulas activas 
+para el programa.
+
+Se extraen todas las sentencias de decisión (if, for, while, etc).
+
+27: (month2 == month1)
+37: ((m4!= 0) || ((m100 == 0) && (m400 != 0 )))
+46: (i <= month2-1)
+
+Precondiciones de cada predicado
+
+27: True
+37: (month1 != month2)
+46: (month1 != month2)
+
+CACC
+a = (m4 != 0)
+b = (m100 == 0)
+c = (m400 != 0)
+						|	Clauses		|				| CACC  |
+						|	a	b	c	| a || (b && c) |		|
+------------------------|---------------|---------------|-------|
+p37: 					|				|				|	
+	((m4!= 0) || 		|	t	t	t	|		T		|		| year = 2000
+	((m100 == 0) &&		|	t	t	f	|		T		|		| year = 2100
+	(m400 != 0 )))		|	t	f	t	|		T		|	x	|
+						|	t	f	f	|		T		|		| year = 2020
+						|	f	t	t	|		T		|	x	|
+						|	f	t	f	|		F		|	x	|
+						|	f	f	t	|		F		|	x	|
+						|	f	f	f	|		F		|		| year = 2019
+-----------------------------------------------------------------
+							
+Con x se marcan los requerimientos que no se pueden cumplir
+
+T1(1,2,3,4,2000) expected = 62
+
+T2(1,2,3,4,2100) expected = 61
+
+T3(1,2,3,4,2020) expected = 62
+
+T4(1,2,3,4,2019) expected = 61
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+d) Medir cobertura de ramas y puntaje de mutación para los tests 
+propuestos en los incisos a), b) y c).
+
+- Respuesta:
+a) BestChoiseCoverage
+Branches Coverage: 70%
+Mutation Score: >> Generated 56 mutations Killed 14 (25%)
+16 de estos mutantes generados son elimnaciones de println (mutantes equivalentes)
+eso se traduce a un 
+Mutation Score: 35%
+
+b)ClauseCoverage
+Branches Coverage: 80%
+Mutation Score: >> Generated 56 mutations Killed 10 (18%)
+16 de estos mutantes generados son elimnaciones de println (mutantes equivalentes)
+eso se traduce a un 
+Mutation Score: 25%
+
+c)
+Branches Coverage: 90%
+Mutation Score: >> Generated 56 mutations Killed 16 (29%)
+16 de estos mutantes generados son elimnaciones de println (mutantes equivalentes)
+eso se traduce a un 
+Mutation Score: 40%
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+e) Si es posible, agregar tests manualmente hasta maximizar cobertura de 
+ramas y puntaje de mutación. Mejorar el modelo del espacio de entradas 
+si es apropiado.
+
+- Respuesta:
+Refinamiento Ejercicio 3a)
+Característica 1) Tipo de año: 
+
+	- Bloque 1)   Año % 4:  2020
+	- Bloque 2)   Año % 100: 2100
+	- Bloque 3)   Año % 400: 2000   
+	- Bloque 4) ¬(Año % 4 && Año % 100 && Año % 400): 2019 
+
+Característica 2) Relación entre mes1 y mes2: 
+
+	- Bloque 1) month1 < month2: 1,5 	 
+	- Bloque 2) month1 = month2: 2,2
+	- Bloque 3) month1 > month2: 5,1
+
+Característica 3) Tipo de día:
+	- Bloque 1) Pertenece a cualquier mes  : 	1,3	[1,28]
+	- Bloque 2) Día especial de febrero : 		29 
+	- Bloque 3) Valor final en algunos meses:	30 
+	- Bloque 4) Valor final en otros meses:		31
+	- Bloque 5) No pertenece a un ningún mes :	32	(-inf..0]u[32..inf)
+
+Elegir bloque base de cada característica, Para cada característica me parece
+apropiado escoger el primer bloque como base, excepto por la primera característica,
+para ésta característica elijo el bloque 4 porque son las opciones que van a 
+ejercitar mejor el código.
+
+Aclaración, cada test contendrá los siguientes valores en el siguiente orden:
+
+	Tn (month1, day1, month2, day2, year)
+
+Bloque base:
+	T1 (1,3,5,3,2019) 	expected 120
+	T2 (1,3,5,3,2020) 	expected 121
+	T3 (2,3,2,3,2019)	expected 0
+	T4 (5,3,1,3,2019)	expected fail
+				solo cambio uno de los días
+	T5 (1,3,5,29,2019)	expected 146
+	T6 (1,3,5,30,2019)	expected 147
+	T7 (1,3,5,31,2019)	expected 148
+	T8 (1,3,5,32,2019)	expected fail
+	T9 (1,3,5,3,2100) 	expected 120
+	T10 (1,3,5,3,2000) 	expected 121
+	
+// de esta forma recubrimos 100% branches coverage
+ 
+Refinamiento Ejercicio 3b)
+Se pueden agregar algunas mejoras a la especificación, ésto nos deja el siguiente predicado:
+
+(1<=month1)∧(month1<=12)∧(1<=month2)∧(month2<=12)∧(month1<=month2)∧(1<=day1)∧(day1<=31)∧
+ |_______|   |________|   |_______|   |________|   |____________|   |_____|   |______|
+ 	C1			C2			 C3			 C4				C5			  C6		  C7
+
+(1<=day2)∧(day2<=31)∧(1<=year)∧(year<=10000)
+ |_____|   |______|   |_____|   |_________|
+ 	C8		  C9		C10			C11
+
+Analicemos como hacer verdadera y falsa cada cláusula
+
+C1)
+False = month1 = 0
+True = 	month1 = 2
+
+C2)
+False = month1 = 13
+True = 	month1 = 2
+
+C3)
+False = month2 = -1
+True =	month2 = 5
+
+C4)
+False = month2 = 16
+True =	month2 = 5
+
+C5)
+False = month1 = 6 , month2 = 3
+True =	month1 = 3 , month2 = 6
+
+C6)
+False = day1 = 0
+True =	day1 = 20
+
+C7)
+False = day1 = 32
+True =	day1 = 20
+
+C8)
+False = day2 = -3
+True =	day2 = 13
+
+C9)
+False = day2 = 39
+True =	day2 = 13
+
+C10)
+False = year = 0
+True =	year = 2020
+
+C11)
+False = year = 10001
+True =	year = 2020
+
+Para realizar cobertura de cláusulas utilizo los siguientes test:
+	
+	Tn (month1, day1, month2, day2, year)
+
+	T1(2,20,5,13,2020) 		Cubro C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11
+	T2(0,0,-1,-3,0)			Cubro ¬C1,C2,¬C3,C4,¬C5,¬C6,C7,¬C8,C9,¬C10,C11
+	T3(13,32,16,39,10001)	Cubro C1,¬C2,C3,¬C4,C5,C6,¬C7,C8,¬C9,C10,¬C11
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+f) Cuántos de los mutantes generados son equivalentes? Cuál es el puntaje 
+de mutación sin considerar los mutantes equivalentes.
+
+- Respuesta: 
+Mutantes equivalentes = 16. Estos mutantes generados son elimnaciones de 
+println (mutantes equivalentes).  
